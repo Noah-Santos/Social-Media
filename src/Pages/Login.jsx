@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
 
-const Blog = () => {
+const Login = () => {
   return (
     <div>
-      <Nav></Nav>
-      <div>Blog</div>
+        
     </div>
   )
 }
 
-export default Blog
+export default Login

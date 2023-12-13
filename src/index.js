@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import "./styles/css/main.css";
 import Blog from './Pages/Blog';
+import Error from './Pages/Error';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 
 import {
   createBrowserRouter,
@@ -12,11 +16,23 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Login/>,
   },
   {
-    path: "/Blog",
+    path: "/sign",
+    element: <SignUp/>,
+  },
+  {
+    path: "/home",
+    element: <Home/>,
+  },
+  {
+    path: "/blog",
     element: <Blog/>,
+  },
+  {
+    path: "*",
+    element: <Error/>,
   },
 ]);
 

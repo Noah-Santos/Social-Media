@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
 
-const Blog = () => {
+const Home = () => {
   return (
     <div>
-      <Nav></Nav>
-      <div>Blog</div>
+        <Nav></Nav>
+        <div>Home</div>
     </div>
   )
 }
 
-export default Blog
+export default Home

@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    background-color: rgb(38, 38, 38);
+
+    .logoContainer{
+
+    }
+
+    .linksContainer{
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+
+        .links{
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+        }
+    }
+}

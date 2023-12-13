@@ -10,7 +10,7 @@ function App() {
 				</p>
 				<Link
 					className="App-link"
-					to={'/Blog'}
+					to={'/blog'}
 					rel="noopener noreferrer"
 				>
 					Learn React
