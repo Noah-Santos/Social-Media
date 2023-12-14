@@ -1,28 +1,36 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useState} from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import Nav from '../Components/Nav';
+import Content from "../Components/Content";
 
 const Blog = () => {
   let {id} = useParams();
-  const result = useRef({})
-  useEffect(() => {
-    let test = async() => {
-      result.current = await fetch(`http://localhost:5000/posts/${id}`, {
-        method: "GET"
-      });
-      result.current = await result.current.json();
-      console.log(result.current.success);
+  const [result, setResult] = useState({success: true, data: {
+    author: "",
+    title: "",
+    id: "",
+    image: "",
+    desc: ""
+  }})
+  let getPost = async() => {
+    try {
+      let response = await axios.get(`http://localhost:5000/posts/${id}`);
+      console.log(response.data);
+      setResult(response.data);
+    } catch(err) {
+      console.log(err);
     }
-    test();
-  }, );
+  }
+  useEffect(() => {
+    getPost();
+  }, []);
   return (
     <div>
       <Nav logged={true}></Nav>
-      <div>
-        {result.current.success ? <><h1>{result.current.data.title}</h1><img href={result.current.data.image} alt={result.current.data.title}></img><h3>{result.current.data.author}</h3><p>{result.current.data.desc}</p></> : <h1>There is no post with this id</h1>}
-      </div>
+      <Content data={result}/>
     </div>
   )
 }
 
-export default Blog
+export default Blog;
