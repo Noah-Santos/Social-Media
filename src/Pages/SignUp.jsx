@@ -18,9 +18,12 @@ const SignUp = () => {
   ])
 
   return (
-    <div>
-        <Form data={data.current}></Form>
-    </div>
+    <>
+      <Nav  logged={false}></Nav>
+      <div>
+        <Form data={data.current}  location={'log'}></Form>
+      </div>
+    </>
   )
 }
 

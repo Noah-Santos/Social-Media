@@ -23,9 +23,12 @@ const Login = () => {
   ])
 
   return (
-    <div>
-        <Form data={data.current}  location='sign'></Form>
-    </div>
+    <>
+      <Nav  logged={false}></Nav>
+      <div>
+        <Form data={data.current}  location={'sign'}></Form>
+      </div>
+    </>
   )
 }
 

@@ -5,7 +5,7 @@ import Nav from '../Components/Nav';
 const Blog = () => {
   return (
     <div>
-      <Nav></Nav>
+      <Nav logged={true}></Nav>
       <div>Blog</div>
     </div>
   )
