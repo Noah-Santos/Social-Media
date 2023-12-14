@@ -13,8 +13,7 @@ const readAllPosts = async (req, res) => {
 }
 
 //post "/"
-//change this to match the format of the posts
-//this is for title, content, author, and id (they fill in? should be messy)
+//automatically generate id somehow
 const createPost = async(req, res) => {
     try {
         const {title, image, desc, author} = req.body;
