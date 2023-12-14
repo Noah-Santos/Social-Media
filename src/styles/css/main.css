@@ -22,6 +22,16 @@ body {
   height: 4.5rem;
   background-color: rgb(38, 38, 38);
 }
+.nav .logoContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav .logoContainer .logo {
+  padding-left: 1.5rem;
+  height: 3.75rem;
+}
 .nav .linksContainer {
   display: flex;
   justify-content: space-evenly;
@@ -30,5 +40,11 @@ body {
 .nav .linksContainer .links {
   font-size: 2rem;
   color: white;
+  text-decoration: none;
+}
+
+body .account {
+  color: black;
+  font-size: 2rem;
   text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
