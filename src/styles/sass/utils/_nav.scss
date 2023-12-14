@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 4.5rem;
+    height: 4.75rem;
     background-color: rgb(38, 38, 38);
 
     .logoContainer{
@@ -13,20 +13,38 @@
         align-items: center;
 
         .logo{
+            padding-left: 2.5rem;
+            height: 3.5rem;
+        }
+
+        .title{
+            font-size: 2.75rem;
+            font-weight: strong;
             padding-left: 1.5rem;
-            height: 3.75rem;
         }
     }
 
     .linksContainer{
         display: flex;
         justify-content: space-evenly;
-        width: 30%;
+        width: 25%;
 
         .links{
-            font-size: 2rem;
-            color: white;
+            font-size: 1.5rem;
+            color: black;
             text-decoration: none;
+        }
+
+        .navBtn{
+            background-color: white;
+            border: none;
+            padding: {
+                top: 0.25rem;
+                bottom: 0.25rem;
+                left: 0.5rem;
+                right: 0.5rem;
+            };
+            border-radius: .5rem;
         }
     }
 }

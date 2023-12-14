@@ -1,7 +1,7 @@
 import {useRef} from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
-import Form from '../Components/Form';
+import LogForm from '../Components/LogForm';
 
 const Login = () => {
   const data = useRef([
@@ -26,7 +26,7 @@ const Login = () => {
     <>
       <Nav  logged={false}></Nav>
       <div>
-        <Form data={data.current}  location={'sign'}></Form>
+        <LogForm></LogForm>
       </div>
     </>
   )
