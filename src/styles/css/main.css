@@ -65,4 +65,21 @@ body .account {
 }
 body .input {
   color: black;
+}
+
+.loginSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.loginSection .loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.loginSection .loginForm .loginArea {
+  color: black;
 }/*# sourceMappingURL=main.css.map */

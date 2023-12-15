@@ -34,28 +34,28 @@ const LogForm = ({data, location}) => {
             body: JSON.stringify({name, email, password}),
             headers: {'Content-Type': 'application/json'},
         })
-        localStorage.setItem('authenticated', true);
+        sessionStorage.setItem('authenticated', true);
         setLogin(true);
       }
   }
 
   if(login == true){
-      window.location.replace('/home');
+      window.location.replace('/sign');
   }
 
   return (
     <>
-        <article>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <article className='loginSection'>
+            <form onSubmit={handleSubmit} className='loginForm'>
+                <div className='loginArea'>
                     <label htmlFor="name">Name:</label>
                     <input type="text" name="name" id="name" value={name} onChange={(e)=>setName(e.target.value)} className='input' placeholder='Name'/>
                 </div>
-                <div>
+                <div className='loginArea'>
                     <label htmlFor="email">Email:</label>
                     <input type="text" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} className='input' placeholder='Email'/>
                 </div>
-                <div>
+                <div className='loginArea'>
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='input' placeholder='Password'/>
                 </div>

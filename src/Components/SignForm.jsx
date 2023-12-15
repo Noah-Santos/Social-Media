@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SignForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [login, setLogin] = useState(localStorage.getItem("authenticated") || false)
+    const [login, setLogin] = useState(sessionStorage.getItem("authenticated") || false)
     const [people, setPeople] = useState([]);
 
     useEffect(()=>{
@@ -23,7 +23,8 @@ const SignForm = () => {
         e.preventDefault();
         people.data.map(person=>{
             if(email === person.email && password === person.password){
-                localStorage.setItem('authenticated', true);
+                sessionStorage.setItem('authenticated', true);
+                sessionStorage.setItem('currentUser', JSON.stringify([person.id, person.name, person.email]));
                 setLogin(true);
             }
         })
