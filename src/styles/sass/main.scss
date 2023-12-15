@@ -1,1 +1,21 @@
-@import './utils/reset', './utils/nav', './utils/forms', './utils/loginForm'
+@import './utils/reset', './utils/nav', './utils/forms';
+
+.blogCard {
+    width: 30vw;
+    height: 10vh;
+    border: 0.5em solid black;
+    margin: 0.5em;
+    text-align: center;
+}
+
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.individualPost {
+    text-align: center;
+    img {
+        width: 50vw;
+    }
+}
