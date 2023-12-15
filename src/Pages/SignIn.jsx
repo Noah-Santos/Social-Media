@@ -1,9 +1,9 @@
 import {useRef} from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
-import Form from '../Components/Form';
+import SignForm from '../Components/SignForm';
 
-const SignUp = () => {
+const SignIn = () => {
   const data = useRef([
     {
       title: 'email',
@@ -21,10 +21,10 @@ const SignUp = () => {
     <>
       <Nav  logged={false}></Nav>
       <div>
-        <Form data={data.current}  location={'log'}></Form>
+        <SignForm></SignForm>
       </div>
     </>
   )
 }
 
-export default SignUp
+export default SignIn

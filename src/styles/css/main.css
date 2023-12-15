@@ -3,6 +3,7 @@
   padding: 0;
   font-family: batman2;
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body, html {
@@ -19,7 +20,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4.5rem;
+  height: 4.75rem;
   background-color: rgb(38, 38, 38);
 }
 .nav .logoContainer {
@@ -29,18 +30,32 @@ body {
   align-items: center;
 }
 .nav .logoContainer .logo {
+  padding-left: 2.5rem;
+  height: 3.5rem;
+}
+.nav .logoContainer .title {
+  font-size: 2.75rem;
+  font-weight: strong;
   padding-left: 1.5rem;
-  height: 3.75rem;
 }
 .nav .linksContainer {
   display: flex;
   justify-content: space-evenly;
-  width: 30%;
+  width: 25%;
 }
 .nav .linksContainer .links {
-  font-size: 2rem;
-  color: white;
+  font-size: 1.5rem;
+  color: black;
   text-decoration: none;
+}
+.nav .linksContainer .navBtn {
+  background-color: white;
+  border: none;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 body .account {
