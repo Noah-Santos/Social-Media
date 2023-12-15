@@ -18,11 +18,12 @@ const readAllPosts = async (req, res) => {
 const createPost = async (req, res) => {
 	try {
 		const { title, image, desc, authorName, authorId } = req.body;
+		let allPosts = await Post.find({});
 		if (!title || !image || !desc || !authorName || !authorId) {
 			console.log("not all fields are filled out");
 			return res.json({ data: [], success: false, msg: "Please fill out all fields" });
 		} else {
-			let itemTwo = await Post.create(req.body);
+			let itemTwo = await Post.create({title:title, image:image, description:desc, authorName:authorName, authorId:authorId, id: allPosts.length+1});
 			res.json({ success: true, data: itemTwo });
 			//give it an id
 		}
