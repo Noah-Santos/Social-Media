@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import logo from '../img/logo3.png';
 
 const Nav = ({logged}) => {
+  console.log(localStorage.getItem('authenticated'));
+
+  const out = () => {
+    localStorage.setItem('authenticated', false);
+    window.location.replace('/');
+  }
+
   if(!logged){
     return (
       <nav className="nav">
@@ -23,12 +30,13 @@ const Nav = ({logged}) => {
     <nav className="nav">
         <div className="logoContainer">
             <img src={logo} alt="logo" className='logo'/>
+            <p className='title'>Peak Posts</p>
         </div>
 
         <div className="linksContainer">
             <Link to={'/home'} className='links navBtn'>Home</Link>
-            <Link to={'/blog'} className='links navBtn'>Blog</Link>
-            <Link to={'/'} className='links navBtn'>Logout</Link>
+            {/* <Link to={'/blog'} className='links navBtn'>Blog</Link> */}
+            <Link to={'/'} className='links navBtn' onClick={out}>Logout</Link>
         </div>
     </nav>
   )
