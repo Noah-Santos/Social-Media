@@ -7,11 +7,12 @@ import Content from "../Components/Content";
 const Blog = () => {
   let {id} = useParams();
   const [result, setResult] = useState({success: true, data: {
-    author: "",
+    authorName: "",
     title: "",
     id: "",
     image: "",
-    desc: ""
+    description: "",
+    authorId: ""
   }})
   let getPost = async() => {
     try {

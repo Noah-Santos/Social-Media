@@ -16,14 +16,11 @@ const postSchema = new mongoose.Schema(
 		image: {
 			type: String,
 		},
-		desc: {
+		description: {
 			type: String,
 		},
 	},
-	{ collection: "Blog-Posts" }
+	{ collection: "posts" }
 );
 
 module.exports = mongoose.model("Post", postSchema);
-
-//People
-//name, email, password, id
