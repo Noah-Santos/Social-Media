@@ -1,4 +1,4 @@
-@import './utils/reset', './utils/nav', './utils/forms';
+@import './utils/reset', './utils/nav', './utils/loginForm', './utils/signForm';
 
 .blogCard {
     width: 30vw;
@@ -15,7 +15,17 @@
 
 .individualPost {
     text-align: center;
-    img {
+    img{
         width: 50vw;
     }
+}
+
+.stretch{
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }

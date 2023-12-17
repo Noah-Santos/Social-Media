@@ -7,7 +7,9 @@ const SignForm = () => {
     const [login, setLogin] = useState(sessionStorage.getItem("authenticated") || false)
     const [people, setPeople] = useState([]);
 
-    useEffect(()=>{
+    console.log(login)
+
+    useEffect(()=>{  
         fetch('http://localhost:5000/users').then(response =>{
             return response.json();
         }).then(res=>{
@@ -36,22 +38,23 @@ const SignForm = () => {
     }
 
     return (
-        <>
-            <article>
-                <form onSubmit={handleSubmit} >
-                    <div >
-                        <label htmlFor="email">Email:</label>
+        <div className='signBody'>
+            <article className='signSection'>
+                <form onSubmit={handleSubmit} className='signForm'>
+                    <div className='signArea'>
+                        {/* <label htmlFor="email">Email:</label> */}
                         <input type="text" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} className='input' placeholder='Email'/>
                     </div>
-                    <div >
-                        <label htmlFor="password">Password:</label>
+                    <div className='signArea'>
+                        {/* <label htmlFor="password">Password:</label> */}
                         <input type="password" name="password" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='input' placeholder='Password'/>
                     </div>
-                    <button type='submit'>Login</button>
+                    <button type='submit' className='submitButton'>Login</button>
                 </form>
-                <Link to={'/'} className='account'>Create Account</Link>
+                {/* <Link to={'/'} className='account'>Create Account</Link> */}
+                <p className='gotIt'>Don't have an account? <Link to={'/'} className='account'>Sign Up</Link></p>
             </article>
-        </>
+        </div>
     )
 }
 

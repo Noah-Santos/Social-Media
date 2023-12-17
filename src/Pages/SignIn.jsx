@@ -20,7 +20,7 @@ const SignIn = () => {
   return (
     <>
       <Nav  logged={false}></Nav>
-      <div>
+      <div className='stretch'>
         <SignForm></SignForm>
       </div>
     </>

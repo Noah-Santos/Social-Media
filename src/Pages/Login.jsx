@@ -25,7 +25,7 @@ const Login = () => {
   return (
     <>
       <Nav  logged={false}></Nav>
-      <div>
+      <div className='stretch'>
         <LogForm></LogForm>
       </div>
     </>

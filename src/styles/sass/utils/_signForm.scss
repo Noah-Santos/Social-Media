@@ -1,11 +1,11 @@
-.loginBody{
+.signBody {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    .loginSection {
+
+    .signSection {
         width: 40%;
         display: flex;
         flex-direction: column;
@@ -15,23 +15,23 @@
         padding: 1rem;
         border-radius: 0.5rem;
 
-        .loginForm {
+        .signForm {
             display: flex;
             flex-direction: column;
             text-align: center;
             align-items: center;
 
-            .loginArea {
+            .signArea {
                 color: black;
                 margin: 1rem;
-                
-                .input{
+
+                .input {
                     font-size: 1.5rem;
                 }
             }
 
             .submitButton {
-                width: 55%;
+                width: 30%;
                 font-size: 1.25rem;
                 padding: {
                     top: 0.25rem;
@@ -42,7 +42,7 @@
             }
         }
 
-        .gotIt{
+        .gotIt {
             color: white;
             font-size: 1rem;
             margin-top: 1.5rem;

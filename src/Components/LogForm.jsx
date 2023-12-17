@@ -44,26 +44,26 @@ const LogForm = ({data, location}) => {
   }
 
   return (
-    <>
+    <div className='loginBody'>
         <article className='loginSection'>
             <form onSubmit={handleSubmit} className='loginForm'>
                 <div className='loginArea'>
-                    <label htmlFor="name">Name:</label>
+                    {/* <label htmlFor="name">Name:</label> */}
                     <input type="text" name="name" id="name" value={name} onChange={(e)=>setName(e.target.value)} className='input' placeholder='Name'/>
                 </div>
                 <div className='loginArea'>
-                    <label htmlFor="email">Email:</label>
+                    {/* <label htmlFor="email">Email:</label> */}
                     <input type="text" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} className='input' placeholder='Email'/>
                 </div>
                 <div className='loginArea'>
-                    <label htmlFor="password">Password:</label>
+                    {/* <label htmlFor="password">Password:</label> */}
                     <input type="password" name="password" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='input' placeholder='Password'/>
                 </div>
-                <button type='submit'>Login</button>
+                <button type='submit' className='submitButton'>Create Account</button>
             </form>
+            <p className='gotIt'>Already have an account? <Link to={'/sign'} className='account'>Sign In</Link></p>
         </article>
-        <Link to={'/sign'} className='account'>Sign In</Link>
-    </>
+    </div>
   )
 }
 

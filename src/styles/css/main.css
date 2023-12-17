@@ -13,6 +13,7 @@ body, html {
 
 body {
   overflow: hidden;
+  background-color: rgb(95, 95, 95);
 }
 
 .nav {
@@ -20,7 +21,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4.75rem;
+  height: 5.5rem;
   background-color: rgb(38, 38, 38);
 }
 .nav .logoContainer {
@@ -37,6 +38,7 @@ body {
   font-size: 2.75rem;
   font-weight: strong;
   padding-left: 1.5rem;
+  color: white;
 }
 .nav .linksContainer {
   display: flex;
@@ -58,10 +60,102 @@ body {
   border-radius: 0.5rem;
 }
 
-body .account {
+.loginBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginBody .loginSection {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.loginBody .loginSection .loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.loginBody .loginSection .loginForm .loginArea {
   color: black;
-  font-size: 2rem;
-  text-decoration: none;
+  margin: 1rem;
+}
+.loginBody .loginSection .loginForm .loginArea .input {
+  font-size: 1.5rem;
+}
+.loginBody .loginSection .loginForm .submitButton {
+  width: 55%;
+  font-size: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 1rem;
+  border: none;
+}
+.loginBody .loginSection .gotIt {
+  color: white;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+.loginBody .loginSection .gotIt .account {
+  color: black;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.signBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signBody .signSection {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.signBody .signSection .signForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.signBody .signSection .signForm .signArea {
+  color: black;
+  margin: 1rem;
+}
+.signBody .signSection .signForm .signArea .input {
+  font-size: 1.5rem;
+}
+.signBody .signSection .signForm .submitButton {
+  width: 30%;
+  font-size: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 1rem;
+  border: none;
+}
+.signBody .signSection .gotIt {
+  color: white;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+.signBody .signSection .gotIt .account {
+  color: black;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .blogCard {
@@ -82,23 +176,14 @@ body .account {
 }
 .individualPost img {
   width: 50vw;
-body .input {
-  color: black;
 }
 
-.loginSection {
-  width: 100%;
+.stretch {
+  height: 100%;
+}
+
+#root {
   height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-.loginSection .loginForm {
-  display: flex;
   flex-direction: column;
-  text-align: center;
-}
-.loginSection .loginForm .loginArea {
-  color: black;
 }/*# sourceMappingURL=main.css.map */
