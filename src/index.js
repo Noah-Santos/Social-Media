@@ -7,6 +7,7 @@ import Error from './Pages/Error';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignIn from './Pages/SignIn';
+import Create from './Pages/Create';
 
 import {
   createBrowserRouter,
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/blog/:id",
     element: <Blog/>,
+  },
+  {
+    path: "/create",
+    element: <Create/>,
   },
   {
     path: "*",

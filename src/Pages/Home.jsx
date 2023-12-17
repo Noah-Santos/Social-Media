@@ -15,9 +15,11 @@ const Home = () => {
   }]})
   let getPosts = async() => {
     try {
-      let response = await axios.get(`http://localhost:5000/posts`);
-      console.log(response.data);
-      setResult(response.data);
+      fetch('http://localhost:5000/posts').then(response =>{
+          return response.json();
+      }).then(res=>{
+          setResult(res);
+      });
     } catch(err) {
       console.log(err);
     }

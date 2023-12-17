@@ -4,15 +4,20 @@
     justify-content: space-evenly;
 
     .blogCard {
-        width: 25vw;
+        width: 20vw;
         height: 20vh;
         border: 0.5em solid black;
-        margin: 0.5em;
         text-align: center;
         background-color: white;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: {
+            top: 0.75rem;
+            bottom: 0.75rem;
+            left: 0.5rem;
+            right: 0.5rem;
+        }
 
         .imageCont {
             width: 55%;

@@ -35,7 +35,7 @@ const Nav = ({logged}) => {
 
         <div className="linksContainer">
             <Link to={'/home'} className='links navBtn'>Home</Link>
-            {/* <Link to={'/blog'} className='links navBtn'>Blog</Link> */}
+            <Link to={'/create'} className='links navBtn'>Post</Link>
             <Link to={'/'} className='links navBtn' onClick={out}>Logout</Link>
         </div>
     </nav>

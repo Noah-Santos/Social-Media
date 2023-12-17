@@ -164,15 +164,18 @@ body {
   justify-content: space-evenly;
 }
 #cardContainer .blogCard {
-  width: 25vw;
+  width: 20vw;
   height: 20vh;
   border: 0.5em solid black;
-  margin: 0.5em;
   text-align: center;
   background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 #cardContainer .blogCard .imageCont {
   width: 55%;
