@@ -1,10 +1,14 @@
 import {useState, useEffect} from 'react';
-import axios from "axios";
-import { Link } from "react-router-dom";
+// import axios from "axios";
+// import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
 import BlogCard from "../Components/BlogCard";
 
 const Home = () => {
+  if(sessionStorage.getItem("authenticated") == 'false'){
+    window.location.replace('/');
+  }
+  
   const [result, setResult] = useState({success: true, data: [{
     authorName: "",
     title: "",

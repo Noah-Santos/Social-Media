@@ -5,6 +5,10 @@ import Nav from '../Components/Nav';
 import Content from "../Components/Content";
 
 const Blog = () => {
+  if(sessionStorage.getItem("authenticated") == 'false'){
+    window.location.replace('/');
+  }
+
   let {id} = useParams();
   const [result, setResult] = useState({success: true, data: {
     authorName: "",

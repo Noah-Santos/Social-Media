@@ -22,6 +22,10 @@ const Login = () => {
     },
   ])
 
+  if(sessionStorage.getItem("authenticated") == 'true'){
+    window.location.replace('/home');
+  }
+
   return (
     <>
       <Nav  logged={false}></Nav>
