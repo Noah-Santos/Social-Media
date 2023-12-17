@@ -19,6 +19,7 @@ const createPost = async (req, res) => {
 	try {
 		const { title, image, desc, authorName, authorId } = req.body;
 		let allPosts = await Post.find({});
+		console.log(title + ' ' + image + ' ' + desc + ' ' + authorName + ' ' + authorId);
 		if (!title || !image || !desc || !authorName || !authorId) {
 			console.log("not all fields are filled out");
 			return res.json({ data: [], success: false, msg: "Please fill out all fields" });
