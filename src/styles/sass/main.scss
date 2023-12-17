@@ -1,17 +1,4 @@
-@import './utils/reset', './utils/nav', './utils/loginForm', './utils/signForm';
-
-.blogCard {
-    width: 30vw;
-    height: 10vh;
-    border: 0.5em solid black;
-    margin: 0.5em;
-    text-align: center;
-}
-
-#cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
+@import './utils/reset', './utils/nav', './utils/loginForm', './utils/signForm', './utils/blogCard';
 
 .individualPost {
     text-align: center;

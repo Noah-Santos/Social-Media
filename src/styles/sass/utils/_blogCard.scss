@@ -1,0 +1,54 @@
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .blogCard {
+        width: 25vw;
+        height: 20vh;
+        border: 0.5em solid black;
+        margin: 0.5em;
+        text-align: center;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .imageCont {
+            width: 55%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .blogImage {
+                width: 80%;
+                height: auto;
+            }
+        }
+
+        .blogContent {
+            width: 45%;
+
+            padding: {
+                top: 1rem;
+                bottom: 1rem;
+                right: 0.25rem;
+                left: 0.5rem
+            }
+
+            ;
+            text-align: left;
+            text-decoration: none;
+
+            .blogTitle {
+                font-size: 2rem;
+            }
+
+            .blogAuthor {
+                font-size: 1rem;
+            }
+        }
+    }
+}

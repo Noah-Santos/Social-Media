@@ -1,11 +1,14 @@
 import {Link} from "react-router-dom";
 
-const BlogCard = ({title, authorName, id}) => {
+const BlogCard = ({title, authorName, id, image}) => {
     return (
         <div className="blogCard">
-            <Link to={`../blog/${id}`}>
-                <h1>{title}</h1>
-                <p>by {authorName}</p>
+            <div className="imageCont">
+                <img src={image} alt="post" className='blogImage'/>
+            </div>
+            <Link to={`../blog/${id}`} className='blogContent'>
+                <h1 className='blogTitle'>{title}</h1>
+                <p className="blogAuthor">by {authorName}</p>
             </Link>
         </div>
     )
