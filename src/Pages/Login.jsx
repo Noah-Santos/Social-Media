@@ -2,8 +2,10 @@ import {useRef} from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
 import LogForm from '../Components/LogForm';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const data = useRef([
     {
       title: 'name',
@@ -23,7 +25,8 @@ const Login = () => {
   ])
 
   if(sessionStorage.getItem("authenticated") == 'true'){
-    window.location.replace('/home');
+    navigate('/home');
+    // window.location.replace('/home');
   }
 
   return (

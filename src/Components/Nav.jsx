@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import logo from '../img/logo3.png';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Nav = ({logged}) => {
+  const navigate = useNavigate();
   // blocks the user from accessing the site until they log back in after logging out
   const out = () => {
     sessionStorage.setItem('authenticated', false);
-    window.location.replace('/');
+    navigate('/home');
+    // window.location.replace('/');
   }
 
   // nav bar for unauthorized users

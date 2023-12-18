@@ -3,11 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Nav from '../Components/Nav';
 import Content from "../Components/Content";
+import { useNavigate } from 'react-router-dom';
 
 const Blog = () => {
+  const navigate = useNavigate();
   // returns user to log in page if not logged in
   if(sessionStorage.getItem("authenticated") === 'false'){
-    window.location.replace('/');
+    navigate('/home');
+    // window.location.replace('/');
   }
 
   let {id} = useParams();

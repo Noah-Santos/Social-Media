@@ -1,11 +1,14 @@
 import {useState, useRef, useEffect} from 'react';
 import Nav from '../Components/Nav';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Edit = () => {
+    const navigate = useNavigate();
     // returns user to log in page if not logged in
     if(sessionStorage.getItem("authenticated") === 'false'){
-        window.location.replace('/');
+        // window.location.replace('/');
+        navigate('/');
     }
 
     const [title, setTitle] = useState('');
@@ -50,7 +53,8 @@ const Edit = () => {
                 headers: {'Content-Type': 'application/json'},
             })
         }
-        window.location.replace('/home');
+        // window.location.replace('/home');
+        navigate('/home');
     }
 
     const updateImage = (e) =>{

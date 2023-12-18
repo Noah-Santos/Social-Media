@@ -3,11 +3,14 @@ import {useState, useEffect} from 'react';
 // import { Link } from "react-router-dom";
 import Nav from '../Components/Nav';
 import BlogCard from "../Components/BlogCard";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
   // returns user to log in page if not logged in
   if(sessionStorage.getItem("authenticated") === 'false'){
-    window.location.replace('/');
+    // window.location.replace('/');
+    navigate('/');
   }
   
   const [result, setResult] = useState({success: true, data: [{

@@ -1,10 +1,13 @@
 import {useRef, useState} from 'react';
 import Nav from '../Components/Nav';
+import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
+    const navigate = useNavigate();
     // returns user to log in page if not logged in
     if(sessionStorage.getItem("authenticated") === 'false'){
-        window.location.replace('/');
+        navigate('/');
+        // window.location.replace('/');
     }
 
     // gets the current user
@@ -26,7 +29,8 @@ const Create = () => {
                 headers: {'Content-Type': 'application/json'},
             })
         }
-        window.location.replace('/home');
+        // window.location.replace('/home');
+        navigate('/home');
     }
 
     // const onImageChange = (e) => {
