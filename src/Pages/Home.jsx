@@ -5,7 +5,7 @@ import Nav from '../Components/Nav';
 import BlogCard from "../Components/BlogCard";
 
 const Home = () => {
-  if(sessionStorage.getItem("authenticated") == 'false'){
+  if(sessionStorage.getItem("authenticated") === 'false'){
     window.location.replace('/');
   }
   

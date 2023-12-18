@@ -2,35 +2,47 @@ import {useRef, useState} from 'react';
 import Nav from '../Components/Nav';
 
 const Create = () => {
-    if(sessionStorage.getItem("authenticated") == 'false'){
+    if(sessionStorage.getItem("authenticated") === 'false'){
         window.location.replace('/');
     }
 
     const user = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
-    let authorId = user[0];
-    let authorName = user[1];
-    let authorEmail = user[2];
+    let authorId = user.current[0];
+    let authorName = user.current[1];
+    let authorEmail = user.current[2];
     // id, name, email
     const [title, setTitle] = useState('');
     const [desc, setDescription] = useState('');
-    const [image, setImage] = useState('');
+    const image = useRef('')
+    var reader  = new FileReader();
     // console.log(user)
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        let img = image.current;
+        // img = img.replace('localhost:3000/', '');
+        // img = img.replace('blob:', '');
+        // img = img[1];
+        console.log(user)
         console.log(image);
-        if(title != '' && desc != '' && image != ''){
+        console.log(img)
+        console.log(title)
+        console.log(desc)
+        console.log(authorName)
+        console.log(user[1])
+        console.log(authorId)
+        console.log(user[0])
+        if(title !== '' && desc !== '' && image !== ''){
             fetch('http://localhost:5000/posts',{
                 method: 'POST',
-                body: JSON.stringify({title, desc, image, authorId, authorName, authorEmail}),
+                body: JSON.stringify({title, img, desc, authorName, authorId}),
                 headers: {'Content-Type': 'application/json'},
             })
         }
     }
 
-    const imageChange = (img) =>{
-        setImage(img);
-        console.log(img)
+    const onImageChange = (e) => {
+        image.current = URL.createObjectURL(e.target.files[0]);
     }
 
   return (
@@ -44,10 +56,11 @@ const Create = () => {
                 <input type="text" name="description" id="description" onChange={(e)=>setDescription(e.target.value)} className='input' placeholder='Description'/>
             </div>
             <div className='blogArea'>
-                <input type="file" id="imageBlog" name="image" onChange={(e)=>imageChange(e.target.files[0])} className='input' accept="image/png, image/jpeg"/>
+                <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='input' accept="image/png, image/jpeg"/>
             </div>
             <input type="submit"/>
         </form>
+        <img src="" alt="" id="output" />
     </div>
   )
 }
