@@ -31,22 +31,27 @@ const Create = () => {
     }
 
   return (
-    <div>
+    <>
         <Nav logged={true}></Nav>
-        <form onSubmit={handleSubmit} className='createPost'>
-            <div className='blogArea'>
-                <input type="text" name="title" id="title" onChange={(e)=>setTitle(e.target.value)} className='input' placeholder='Title'/>
+        <div className='stretch'>
+            <div className="createBody">
+                <article className="createSection">
+                    <form onSubmit={handleSubmit} className='createPost'>
+                        <div className='blogArea'>
+                            <input type="text" name="title" id="title" onChange={(e)=>setTitle(e.target.value)} className='input' placeholder='Title'/>
+                        </div>
+                        <div className='blogArea'>
+                            <input type="text" name="description" id="description" onChange={(e)=>setDescription(e.target.value)} className='input' placeholder='Description'/>
+                        </div>
+                        <div className='blogArea'>
+                            <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='imageInput' accept="image/png, image/jpeg"/>
+                        </div>
+                        <input type="submit" className='submitButton'/>
+                    </form>
+                </article>
             </div>
-            <div className='blogArea'>
-                <input type="text" name="description" id="description" onChange={(e)=>setDescription(e.target.value)} className='input' placeholder='Description'/>
-            </div>
-            <div className='blogArea'>
-                <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='input' accept="image/png, image/jpeg"/>
-            </div>
-            <input type="submit"/>
-        </form>
-        <img src="" alt="" id="output" />
-    </div>
+        </div>
+    </>
   )
 }
 

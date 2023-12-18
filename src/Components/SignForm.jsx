@@ -7,6 +7,7 @@ const SignForm = () => {
     const [login, setLogin] = useState(sessionStorage.getItem("authenticated") || false)
     const [people, setPeople] = useState([]);
 
+    // gets all the users
     useEffect(()=>{  
         fetch('http://localhost:5000/users').then(response =>{
             return response.json();
@@ -17,6 +18,8 @@ const SignForm = () => {
 
     // New handle submit for forms
     const handleSubmit = (e)=>{
+        // makes sure that all fields are filled out
+        // also checks to make sure that the credentials match a valid user
         e.preventDefault();
         people.data.map(person=>{
             if(email === person.email && password === person.password){

@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {useRef} from 'react';
 const Content = ({data}) => {
     return(
         <div className="individualPost">{data.success ? <>

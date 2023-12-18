@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import logo from '../img/logo3.png';
 
 const Nav = ({logged}) => {
+  // blocks the user from accessing the site until they log back in after logging out
   const out = () => {
     sessionStorage.setItem('authenticated', false);
     window.location.replace('/');
   }
 
+  // nav bar for unauthorized users
   if(!logged){
     return (
       <nav className="nav">
@@ -24,6 +26,7 @@ const Nav = ({logged}) => {
     )
   }
 
+  // nav for logged in users
   return (
     <nav className="nav">
         <div className="logoContainer">

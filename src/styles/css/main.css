@@ -205,6 +205,51 @@ body {
   font-size: 1rem;
 }
 
+.createBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.createBody .createSection {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.createBody .createSection .createPost {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.createBody .createSection .createPost .blogArea {
+  color: black;
+  margin: 1rem;
+}
+.createBody .createSection .createPost .blogArea .input {
+  font-size: 1.5rem;
+}
+.createBody .createSection .createPost .blogArea .imageInput {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  color: white;
+}
+.createBody .createSection .createPost .submitButton {
+  width: 55%;
+  font-size: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 1rem;
+  border: none;
+}
+
 .individualPost {
   text-align: center;
 }
