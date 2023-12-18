@@ -7,8 +7,6 @@ const SignForm = () => {
     const [login, setLogin] = useState(sessionStorage.getItem("authenticated") || false)
     const [people, setPeople] = useState([]);
 
-    console.log(login)
-
     useEffect(()=>{  
         fetch('http://localhost:5000/users').then(response =>{
             return response.json();
@@ -16,9 +14,6 @@ const SignForm = () => {
             setPeople(res);
         });
     }, []);
-
-    console.log(people)
-    console.log(people.data)
 
     // New handle submit for forms
     const handleSubmit = (e)=>{

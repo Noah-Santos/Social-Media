@@ -21,7 +21,6 @@ const Blog = () => {
   let getPost = async() => {
     try {
       let response = await axios.get(`http://localhost:5000/posts/${id}`);
-      console.log(response.data);
       setResult(response.data);
     } catch(err) {
       console.log(err);

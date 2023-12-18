@@ -9,29 +9,14 @@ const Create = () => {
     const user = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
     let authorId = user.current[0];
     let authorName = user.current[1];
-    let authorEmail = user.current[2];
     // id, name, email
     const [title, setTitle] = useState('');
     const [desc, setDescription] = useState('');
     const image = useRef('')
-    var reader  = new FileReader();
-    // console.log(user)
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         let img = image.current;
-        // img = img.replace('localhost:3000/', '');
-        // img = img.replace('blob:', '');
-        // img = img[1];
-        console.log(user)
-        console.log(image);
-        console.log(img)
-        console.log(title)
-        console.log(desc)
-        console.log(authorName)
-        console.log(user[1])
-        console.log(authorId)
-        console.log(user[0])
         if(title !== '' && desc !== '' && image !== ''){
             fetch('http://localhost:5000/posts',{
                 method: 'POST',

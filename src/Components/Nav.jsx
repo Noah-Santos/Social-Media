@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import logo from '../img/logo3.png';
 
 const Nav = ({logged}) => {
-  // console.log(sessionStorage.getItem('authenticated'));
-
   const out = () => {
     sessionStorage.setItem('authenticated', false);
     window.location.replace('/');
