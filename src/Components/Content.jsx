@@ -28,8 +28,8 @@ const Content = ({data}) => {
                     <p className='singleDescription'>{data.data.description}</p>
                     {/* only shows the edit and delete button if the user is the author of the post */}
                     <div className='buttonCont'>
-                        {data.data.authorId == authorId ? <Link to={'/edit'} className='singleButtons'><button onClick={storeId} className='buttonText'>Edit</button></Link> : <></>}
-                        {data.data.authorId == authorId ? <Link to={'/home'} className='singleButtons'><button onClick={removePost} className='buttonText'>Delete</button></Link> : <></>}
+                        {data.data.authorId === authorId ? <Link to={'/edit'} className='singleButtons'><button onClick={storeId} className='buttonText'>Edit</button></Link> : <></>}
+                        {data.data.authorId === authorId ? <Link to={'/home'} className='singleButtons'><button onClick={removePost} className='buttonText'>Delete</button></Link> : <></>}
                     </div>
                 </div> 
                 : <h1>There is no post with this id</h1>
