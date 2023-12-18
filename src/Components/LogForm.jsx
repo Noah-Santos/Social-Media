@@ -26,10 +26,11 @@ const LogForm = () => {
             if(email === person.email){
                 taken.current = true;
             }
+            return '';
         })
 
         // if email is not already taken, create a new user
-        if(taken.current == true){
+        if(taken.current === true){
             alert('Email is already taken')
         }else{
             fetch('http://localhost:5000/users',{
@@ -42,7 +43,7 @@ const LogForm = () => {
         }
     }
 
-    if(login == true){
+    if(login === true){
         window.location.replace('/sign');
     }
 

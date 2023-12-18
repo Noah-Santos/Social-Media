@@ -55,7 +55,7 @@ const Create = () => {
                         <div className='blogArea'>
                             {/* <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='imageInput' accept="image/png, image/jpeg"/> */}
                             <input type="text" name="image" id="image" onChange={updateImage} className='input' placeholder='Image URL' required/>
-                            <img src="https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg" alt="uploaded photo" id='imageView'/>
+                            <img src="https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg" alt="uploaded" id='imageView'/>
                         </div>
                         <input type="submit" className='submitButton'/>
                     </form>
