@@ -5,6 +5,7 @@ import Nav from '../Components/Nav';
 import BlogCard from "../Components/BlogCard";
 
 const Home = () => {
+  // returns user to log in page if not logged in
   if(sessionStorage.getItem("authenticated") === 'false'){
     window.location.replace('/');
   }
@@ -17,6 +18,7 @@ const Home = () => {
     description: "",
     authorId: ""
   }]})
+  // gets all posts
   let getPosts = async() => {
     try {
       fetch('http://localhost:5000/posts').then(response =>{

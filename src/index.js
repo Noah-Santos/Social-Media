@@ -8,6 +8,7 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignIn from './Pages/SignIn';
 import Create from './Pages/Create';
+import Edit from './Pages/Edit'
 
 import {
   createBrowserRouter,
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/blog/:id",
     element: <Blog/>,
+  },
+  {
+    path: "/edit",
+    element: <Edit/>,
   },
   {
     path: "/create",

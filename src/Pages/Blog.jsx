@@ -5,6 +5,7 @@ import Nav from '../Components/Nav';
 import Content from "../Components/Content";
 
 const Blog = () => {
+  // returns user to log in page if not logged in
   if(sessionStorage.getItem("authenticated") === 'false'){
     window.location.replace('/');
   }
@@ -18,6 +19,7 @@ const Blog = () => {
     description: "",
     authorId: ""
   }})
+  // gets all the posts clicked on
   let getPost = async() => {
     try {
       let response = await axios.get(`http://localhost:5000/posts/${id}`);

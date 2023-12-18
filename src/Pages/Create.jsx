@@ -2,10 +2,12 @@ import {useRef, useState} from 'react';
 import Nav from '../Components/Nav';
 
 const Create = () => {
+    // returns user to log in page if not logged in
     if(sessionStorage.getItem("authenticated") === 'false'){
         window.location.replace('/');
     }
 
+    // gets the current user
     const user = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
     let authorId = user.current[0];
     let authorName = user.current[1];
