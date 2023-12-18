@@ -16,23 +16,23 @@ const Edit = () => {
     let postId = sessionStorage.getItem('clickedPost');
     console.log(postId);
 
-    // const [result, setResult] = useState([])
+    const [result, setResult] = useState([])
     // gets the post clicked on
-    // let getPost = async() => {
-    //     try {
-    //     let response = await axios.get(`http://localhost:5000/posts/${postId}`);
-    //     setResult(response.data);
-    //     } catch(err) {
-    //     console.log(err);
-    //     }
-    // }
+    let getPost = async() => {
+        try {
+        let response = await axios.get(`http://localhost:5000/posts/${postId}`);
+        setResult(response.data);
+        } catch(err) {
+        console.log(err);
+        }
+    }
 
     useEffect(() => {
         // gets the post clicked on and updates the useState variables
         fetch(`http://localhost:5000/posts/${postId}`).then(response =>{
             return response.json();
         }).then(res=>{
-            // setResult(res);
+            setResult(res);
             setTitle(res.data.title);
             setDescription(res.data.description);
             image.current = (res.data.image);
@@ -74,7 +74,7 @@ const Edit = () => {
                             </div>
                             <div className='blogArea'>
                                 <input type="text" name="image" id="image" onChange={updateImage} className='input' placeholder='Image URL' value={image.current}/>
-                                <img src={image.current} alt="uploaded" id='imageView'/>
+                                <img src={image.current} alt="uploaded photo" id='imageView'/>
                             </div>
                             <input type="submit" className='submitButton'/>
                         </form>

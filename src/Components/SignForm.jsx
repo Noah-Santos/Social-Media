@@ -27,11 +27,10 @@ const SignForm = () => {
                 sessionStorage.setItem('currentUser', JSON.stringify([person.id, person.name, person.email]));
                 setLogin(true);
             }
-            return '';
         })
     }
 
-    if(login === true){
+    if(login == true){
         window.location.replace('/home');
         console.log(login)
     }

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Nav from '../Components/Nav';
 import Content from "../Components/Content";
@@ -20,24 +20,17 @@ const Blog = () => {
     authorId: ""
   }})
   // gets the post clicked on
-  // let getPost = async() => {
-  //   try {
-  //     let response = await axios.get(`http://localhost:5000/posts/${id}`);
-  //     setResult(response.data);
-  //   } catch(err) {
-  //     console.log(err);
-  //   }
-  // }
-  
-  useEffect(async() => {
+  let getPost = async() => {
     try {
       let response = await axios.get(`http://localhost:5000/posts/${id}`);
       setResult(response.data);
     } catch(err) {
       console.log(err);
     }
+  }
+  useEffect(() => {
+    getPost();
   }, []);
-
   return (
     <div>
       <Nav logged={true}></Nav>
