@@ -1,6 +1,6 @@
 import {useState, useRef, useEffect} from 'react';
 import Nav from '../Components/Nav';
-// import axios from "axios";
+import axios from "axios";
 
 const Edit = () => {
     // returns user to log in page if not logged in
