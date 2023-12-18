@@ -1,12 +1,5 @@
 @import './utils/reset', './utils/nav', './utils/loginForm', './utils/signForm', './utils/blogCard', './utils/blogCreate', './utils/singleBlog', './utils/editBlog';
 
-.individualPost {
-    text-align: center;
-    img{
-        width: 50vw;
-    }
-}
-
 .stretch{
     height: 100%;
 }
@@ -15,4 +8,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

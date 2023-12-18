@@ -22,13 +22,15 @@ const Content = ({data}) => {
         <div className="individualPost">
             {data.success ? 
                 <div className='blogBody'>
-                    <h1>{data.data.title}</h1>
-                    <img src={data.data.image} alt={data.data.title}></img>
-                    <h3>{data.data.authorName}</h3>
-                    <p>{data.data.description}</p>
+                    <img src={data.data.image} alt={data.data.title} className='singleImage'></img>
+                    <h1 className='singleTitle'>{data.data.title}</h1>
+                    <h3 className='singleAuthor'>By {data.data.authorName}</h3>
+                    <p className='singleDescription'>{data.data.description}</p>
                     {/* only shows the edit and delete button if the user is the author of the post */}
-                    {data.data.authorId == authorId ? <Link to={'/edit'}><button onClick={storeId}>Edit</button></Link> : <></>}
-                    {data.data.authorId == authorId ? <Link to={'/home'}><button onClick={removePost}>Delete</button></Link> : <></>}
+                    <div className='buttonCont'>
+                        {data.data.authorId == authorId ? <Link to={'/edit'} className='singleButtons'><button onClick={storeId} className='buttonText'>Edit</button></Link> : <></>}
+                        {data.data.authorId == authorId ? <Link to={'/home'} className='singleButtons'><button onClick={removePost} className='buttonText'>Delete</button></Link> : <></>}
+                    </div>
                 </div> 
                 : <h1>There is no post with this id</h1>
             }

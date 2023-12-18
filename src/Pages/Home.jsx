@@ -34,14 +34,16 @@ const Home = () => {
     getPosts();
   }, []);
   return (
-    <div>
+    <>
         <Nav logged={true}></Nav>
-        <div id="cardContainer">
-        {result.data.map((item) => {
-          return <BlogCard key={item.id} {...item}/>
-        })}
+        <div className="stretch">
+          <div id="cardContainer">
+            {result.data.map((item) => {
+              return <BlogCard key={item.id} {...item}/>
+            })}
+          </div>
         </div>
-    </div>
+    </>
   )
 }
 

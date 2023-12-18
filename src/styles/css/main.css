@@ -12,7 +12,6 @@ body, html {
 }
 
 body {
-  overflow: hidden;
   background-color: rgb(95, 95, 95);
 }
 
@@ -258,6 +257,52 @@ body {
   border: none;
 }
 
+.individualPost {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.individualPost .blogBody {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 0.5em solid black;
+  width: 60%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.individualPost .blogBody .singleTitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.individualPost .blogBody .singleImage {
+  width: 40rem;
+  height: auto;
+  margin-top: 1.5rem;
+}
+.individualPost .blogBody .singleAuthor {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.individualPost .blogBody .singleDescription {
+  margin-bottom: 1rem;
+}
+.individualPost .blogBody .buttonCont {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+  width: 20%;
+  justify-content: space-evenly;
+}
+.individualPost .blogBody .buttonCont .singleButtons .buttonText {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgb(137, 137, 137);
+}
+
 .editBody {
   height: 100%;
   display: flex;
@@ -311,13 +356,6 @@ body {
   border: none;
 }
 
-.individualPost {
-  text-align: center;
-}
-.individualPost img {
-  width: 50vw;
-}
-
 .stretch {
   height: 100%;
 }
@@ -326,4 +364,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

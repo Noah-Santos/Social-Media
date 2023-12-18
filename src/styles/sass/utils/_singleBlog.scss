@@ -1,3 +1,61 @@
-// .blogBody{
+.individualPost {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
 
-// }
+    .blogBody{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border: 0.5em solid black;
+        width: 60%;
+        margin: {
+            top: 2rem;
+            bottom: 2rem;
+        };
+        align-items: center;
+
+        .singleTitle{
+            margin: {
+                top: 0.5rem;
+                bottom: 0.25rem;
+            };
+        }
+
+        .singleImage{
+            width: 40rem;
+            height: auto;
+            margin-top: 1.5rem;
+        }
+
+        .singleAuthor{
+            margin: {
+                top: 0.25rem;
+                bottom: 0.5rem;
+            };
+        }
+
+        .singleDescription{
+            margin-bottom: 1rem;
+        }
+
+        .buttonCont{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1.5rem;
+            width: 20%;
+            justify-content: space-evenly;
+
+            .singleButtons {
+
+                .buttonText{
+                    font-size: 1rem;
+                    padding: 0.5rem;
+                    border: none;
+                    border-radius: 0.5rem;
+                    background-color: rgb(137, 137, 137);
+                }
+            }
+        }
+    }
+}
