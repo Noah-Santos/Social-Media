@@ -53,7 +53,8 @@ const readOnePost = async (req, res) => {
 const updatePost = async (req, res) => {
 	try {
 		const { oldId } = req.params;
-		let item = await Post.findOneAndUpdate({ id: oldId }, req.body);
+		const {title, img, desc} = req.body;
+		let item = await Post.findOneAndUpdate({ id: oldId }, {title:title, image:img, description:desc});
 		if (!item) {
 			return res.json({ success: false, data: [] });
 		}

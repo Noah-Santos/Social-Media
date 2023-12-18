@@ -26,10 +26,17 @@ const Create = () => {
                 headers: {'Content-Type': 'application/json'},
             })
         }
+        window.location.replace('/home');
     }
 
-    const onImageChange = (e) => {
-        image.current = URL.createObjectURL(e.target.files[0]);
+    // const onImageChange = (e) => {
+    //     image.current = URL.createObjectURL(e.target.files[0]);
+    // }
+
+    const updateImage = (e) =>{
+        // updates the image value and sets the preview to the image
+        image.current = e.target.value;
+        document.getElementById('imageView').src = image.current;
     }
 
   return (
@@ -46,7 +53,9 @@ const Create = () => {
                             <input type="text" name="description" id="description" onChange={(e)=>setDescription(e.target.value)} className='input' placeholder='Description'/>
                         </div>
                         <div className='blogArea'>
-                            <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='imageInput' accept="image/png, image/jpeg"/>
+                            {/* <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='imageInput' accept="image/png, image/jpeg"/> */}
+                            <input type="text" name="image" id="image" onChange={updateImage} className='input' placeholder='Image URL' required/>
+                            <img src="https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg" alt="uploaded photo" id='imageView'/>
                         </div>
                         <input type="submit" className='submitButton'/>
                     </form>

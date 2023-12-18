@@ -28,6 +28,7 @@ const Edit = () => {
     }
 
     useEffect(() => {
+        // gets the post clicked on and updates the useState variables
         fetch(`http://localhost:5000/posts/${postId}`).then(response =>{
             return response.json();
         }).then(res=>{
@@ -37,22 +38,25 @@ const Edit = () => {
             image.current = (res.data.image);
         });
     }, []);
-    console.log(result.data)
 
+    // updates the data in mongodb if all the fields are updated
     const handleSubmit = (e) =>{
         e.preventDefault();
         let img = image.current;
-        if(title !== '' && desc !== '' && image !== ''){
+        if(title !== '' && desc !== '' && img !== ''){
             fetch(`http://localhost:5000/posts/${postId}`,{
                 method: 'PUT',
                 body: JSON.stringify({title, img, desc}),
                 headers: {'Content-Type': 'application/json'},
             })
         }
+        window.location.replace('/home');
     }
 
-    const onImageChange = (e) => {
-        image.current = URL.createObjectURL(e.target.files[0]);
+    const updateImage = (e) =>{
+        // updates the image value and sets the preview to the image
+        image.current = e.target.value;
+        document.getElementById('imageView').src = image.current;
     }
 
     return (
@@ -69,7 +73,8 @@ const Edit = () => {
                                 <input type="text" name="description" id="description" onChange={(e)=>setDescription(e.target.value)} className='input' value={desc}/>
                             </div>
                             <div className='blogArea'>
-                                <input type="file" id="imageBlog" name="image" onChange={onImageChange} className='imageInput' accept="image/png, image/jpeg"/>
+                                <input type="text" name="image" id="image" onChange={updateImage} className='input' placeholder='Image URL' value={image.current}/>
+                                <img src={image.current} alt="uploaded photo" id='imageView'/>
                             </div>
                             <input type="submit" className='submitButton'/>
                         </form>

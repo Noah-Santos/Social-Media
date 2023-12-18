@@ -231,6 +231,9 @@ body {
 .createBody .createSection .createPost .blogArea {
   color: black;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .createBody .createSection .createPost .blogArea .input {
   font-size: 1.5rem;
@@ -240,6 +243,11 @@ body {
   justify-content: space-evenly;
   text-align: center;
   color: white;
+}
+.createBody .createSection .createPost .blogArea #imageView {
+  width: 5vw;
+  height: auto;
+  padding: 1rem;
 }
 .createBody .createSection .createPost .submitButton {
   width: 55%;
@@ -276,6 +284,9 @@ body {
 .editBody .editSection .editPost .blogArea {
   color: black;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .editBody .editSection .editPost .blogArea .input {
   font-size: 1.5rem;
@@ -285,6 +296,11 @@ body {
   justify-content: space-evenly;
   text-align: center;
   color: white;
+}
+.editBody .editSection .editPost .blogArea #imageView {
+  width: 5vw;
+  height: auto;
+  padding: 1rem;
 }
 .editBody .editSection .editPost .submitButton {
   width: 55%;
