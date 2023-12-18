@@ -19,7 +19,7 @@ const Blog = () => {
     description: "",
     authorId: ""
   }})
-  // gets all the posts clicked on
+  // gets the post clicked on
   let getPost = async() => {
     try {
       let response = await axios.get(`http://localhost:5000/posts/${id}`);

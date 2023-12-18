@@ -7,13 +7,16 @@ const Content = ({data}) => {
 
     // removes the post from the database
     const removePost = () =>{
-        console.log(data.data.id)
         fetch(`http://localhost:5000/posts/${data.data.id}`,{
             method: 'Delete',
             headers: {'Content-Type': 'application/json'},
         })
     }
-    // console.log(data.data)
+
+    // sets the clicked post into the sessionStorage
+    const storeId = () =>{
+        sessionStorage.setItem('clickedPost', data.data.id);
+    }
     
     return(
         <div className="individualPost">
@@ -24,7 +27,7 @@ const Content = ({data}) => {
                     <h3>{data.data.authorName}</h3>
                     <p>{data.data.description}</p>
                     {/* only shows the edit and delete button if the user is the author of the post */}
-                    {data.data.authorId == authorId ? <Link to={'/edit'}>Edit</Link> : <></>}
+                    {data.data.authorId == authorId ? <Link to={'/edit'}><button onClick={storeId}>Edit</button></Link> : <></>}
                     {data.data.authorId == authorId ? <Link to={'/home'}><button onClick={removePost}>Delete</button></Link> : <></>}
                 </div> 
                 : <h1>There is no post with this id</h1>
